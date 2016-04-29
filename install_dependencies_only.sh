@@ -1,0 +1,1 @@
+sudo apt-get install build-essential linux-headers-$(uname -r) g++ cmake freeglut3 freeglut3-dev libxmu-dev libxi-dev cmake make g++ libx11-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libxi-dev
