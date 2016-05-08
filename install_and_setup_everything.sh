@@ -52,15 +52,16 @@ while true; do
 done
 
 echo "Extrating CLion"
-tar xzf clion*.tar.gz -C
+tar xzf CLion*.tar.gz -C .
 
 # Make CLion globally accessible
 echo "Linking CLion"
 cd clion*
+sudo rm /usr/local/bin/clion
 sudo ln -s "$(pwd)/bin/clion.sh" "/usr/local/bin/clion"
 
 sudo apt-get install -y build-essential linux-headers-$(uname -r) g++ cmake freeglut3 freeglut3-dev libxmu-dev libxi-dev cmake make g++ libx11-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libxi-dev
 
-cd `zenity --file-selection --directory --title="Choose where to download starter project's folder" --filename=$PWD/..`
+cd `zenity --file-selection --directory --title="Choose where to download starter project's folder" --filename=$PWD/`
 git clone https://github.com/YashalShakti/OPENGL_using_CMake_starter.git
 clion OPENGL_using_CMake_starter/
