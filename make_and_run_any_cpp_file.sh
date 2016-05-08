@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 2.8)
+> CMakeLists.txt
+echo 'cmake_minimum_required(VERSION 2.8)
 # Project Name
 PROJECT(CG2016)
 
@@ -25,7 +26,7 @@ endif(NOT OPENGL_FOUND)
 #########################################################
 # Include Files
 #########################################################
-add_executable(output main.cpp)
+add_executable(output '"$1"')
 
 ########################################################
 # Linking & stuff
@@ -33,4 +34,8 @@ add_executable(output main.cpp)
 
 
 # create the program "output"
-target_link_libraries(output ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
+target_link_libraries(output ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )' >> CMakeLists.txt
+cmake .
+make
+./output
+
